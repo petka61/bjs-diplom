@@ -6,9 +6,9 @@
       "password": "demo",
       "id": 1,
       "balance": {
-        "RUB": 1000,
-        "USD": 20,
-        "EUR": 20,
+        "RUB": 0,
+        "USD": 20.856518577459685,
+        "EUR": 7.75480545907285,
         "NTC": 3000
       }
     },
@@ -67,7 +67,7 @@
       "balance": {
         "RUB": 0,
         "USD": 0,
-        "EUR": 0,
+        "EUR": 20,
         "NTC": 0
       }
     },
@@ -80,12 +80,91 @@
         "EUR": 0,
         "NTC": 0
       }
+    },
+    {
+      "created_at": "2022-03-07T08:25:08.580Z",
+      "id": 8,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2022-03-07T08:26:08.005Z",
+      "id": 9,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2022-03-13T16:38:44.787Z",
+      "login": "asdsad",
+      "password": "adasd",
+      "id": 10,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2022-03-13T19:45:51.157Z",
+      "login": "aaa",
+      "password": "asa",
+      "id": 11,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2022-03-13T19:47:32.692Z",
+      "login": "sdg",
+      "password": "sdfds",
+      "id": 12,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2022-03-13T19:54:25.331Z",
+      "login": "sadfsd",
+      "password": "`sdfg",
+      "id": 13,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
+    },
+    {
+      "created_at": "2022-03-13T19:55:27.622Z",
+      "login": "asdfasd",
+      "password": "asfdsf",
+      "id": 14,
+      "balance": {
+        "RUB": 0,
+        "USD": 0,
+        "EUR": 0,
+        "NTC": 0
+      }
     }
   ],
   "favorites": {
     "1": {
-      "2": "Ваня дурачок",
-      "3": "Пират Петр"
+      "4": "sdfd"
     },
     "2": {
       "1": "Чувак, который должен 20к неткойнов",
