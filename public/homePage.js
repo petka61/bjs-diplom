@@ -79,9 +79,9 @@ favoritWidget.addUserCallback = function(data) {
       favoritWidget.clearTable();
       favoritWidget.fillTable(request.data);
       money.updateUsersList(request.data);
-      money.setMessage(true, `Добавление прошло успешно`)
+      favoritWidget.setMessage(true, `Добавление прошло успешно`)
     } else {
-      money.setMessage(false, `Добавление не состоялось. Указанный ID уже существует.`)
+      favoritWidget.setMessage(false, `Добавление не состоялось. Указанный ID уже существует.`)
     }
   })
 };
@@ -89,14 +89,12 @@ favoritWidget.addUserCallback = function(data) {
 favoritWidget.removeUserCallback = function(data) {
   ApiConnector.removeUserFromFavorites(data, request => {
     if (request.success) {
-
-      for (let i in request.data) {
-        console.log(i)
-      }
-      ProfileWidget.showProfile(data);
-      money.setMessage(true, `Пользователь удален`)
+      favoritWidget.clearTable();
+      favoritWidget.fillTable(request.data);
+      money.updateUsersList(request.data);
+      favoritWidget.setMessage(true, `Удаление прошло успешно`)
     } else {
-      money.setMessage(false, `Удаление не состоялось`)
+      favoritWidget.setMessage(false, `Удаление не состоялось`)
     }
   })
 };

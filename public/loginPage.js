@@ -7,7 +7,8 @@ loginObj.loginFormCallback = function(data) {
   if (response.success) {
     location.reload();
   } else {
-    loginObj.setLoginErrorMessage(`Пользователь c логином ${data.login} и указанным паролем не найден`);
+    loginObj.setLoginErrorMessage(response.error);
+
   }
 });
 };
@@ -17,7 +18,7 @@ loginObj.registerFormCallback = function(data) {
     if (response.success) {
       location.reload();
     } else {
-      loginObj.setRegisterErrorMessage(`Логин ${data.login} уже существует.`);
+      loginObj.setRegisterErrorMessage(response.error);
     }
   })
 }
