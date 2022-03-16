@@ -89,8 +89,10 @@ favoritWidget.addUserCallback = function(data) {
 favoritWidget.removeUserCallback = function(data) {
   ApiConnector.removeUserFromFavorites(data, request => {
     if (request.success) {
-      ProfileWidget.showProfile(data);
-      favoritWidget.setMessage(true, `Пользователь удален`)
+      favoritWidget.clearTable();
+      favoritWidget.fillTable(request.data);
+      money.updateUsersList(request.data);
+      favoritWidget.setMessage(true, `Удаление прошло успешно`)
     } else {
       favoritWidget.setMessage(false, request.error)
     }
