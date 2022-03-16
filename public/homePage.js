@@ -12,7 +12,7 @@ ApiConnector.current(check => {
   if (check.success) {
     return ProfileWidget.showProfile(check.data);
   } else {
-    console.error("Пользователь не авторизован");
+    console.error;
   }
 });
 
@@ -36,7 +36,7 @@ money.addMoneyCallback = function(data) {
       ProfileWidget.showProfile(request.data);
       money.setMessage(true, `Баланс пополнен на ${data.amount}`)
     } else {
-      money.setMessage(false, `Пополнение баланса не состоялось`)
+      money.setMessage(false, request.error)
     }
   })
 };
@@ -47,7 +47,7 @@ money.conversionMoneyCallback = function(data) {
       ProfileWidget.showProfile(request.data);
       money.setMessage(true, `Конвертация прошла успешно`)
     } else {
-      money.setMessage(false, `Конвертации не произошло`)
+      money.setMessage(false, request.error)
     }
   })
 };
@@ -58,7 +58,7 @@ money.sendMoneyCallback = function(data) {
       ProfileWidget.showProfile(request.data);
       money.setMessage(true, `Перевод прошел успешно`)
     } else {
-      money.setMessage(false, `Перевод не состоялся`)
+      money.setMessage(false, request.error)
     }
   })
 };
@@ -81,7 +81,7 @@ favoritWidget.addUserCallback = function(data) {
       money.updateUsersList(request.data);
       favoritWidget.setMessage(true, `Добавление прошло успешно`)
     } else {
-      favoritWidget.setMessage(false, `Добавление не состоялось. Указанный ID уже существует.`)
+      favoritWidget.setMessage(false, request.error)
     }
   })
 };
@@ -89,12 +89,10 @@ favoritWidget.addUserCallback = function(data) {
 favoritWidget.removeUserCallback = function(data) {
   ApiConnector.removeUserFromFavorites(data, request => {
     if (request.success) {
-      favoritWidget.clearTable();
-      favoritWidget.fillTable(request.data);
-      money.updateUsersList(request.data);
-      favoritWidget.setMessage(true, `Удаление прошло успешно`)
+      ProfileWidget.showProfile(data);
+      favoritWidget.setMessage(true, `Пользователь удален`)
     } else {
-      favoritWidget.setMessage(false, `Удаление не состоялось`)
+      favoritWidget.setMessage(false, request.error)
     }
   })
 };
